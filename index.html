@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Библиотека-читальня им. А. С. Пушкина</title>
+<meta name="description" content="Учебный проект Пушкинской читальни: каталог, бронирование, полные тексты классики и литературные встречи.">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="styles.css"></head><body><div class="sil" aria-hidden="true"><svg viewBox="0 0 210 260" fill="currentColor"><path d="M8 260C12 228 44 214 76 206L84 178C80 168 74 160 72 148C60 138 52 118 54 96C54 60 76 36 104 36C132 34 150 52 152 76C153 84 152 90 156 98L166 112C166 116 160 118 158 120C160 124 158 126 156 128C158 132 156 136 152 140C150 148 142 154 130 158L124 174C132 190 150 200 176 212C190 220 196 238 198 260Z"/><circle cx="66" cy="62" r="15"/><circle cx="84" cy="44" r="15"/><circle cx="104" cy="37" r="14"/><circle cx="124" cy="41" r="13"/><circle cx="56" cy="86" r="14"/><circle cx="54" cy="108" r="12"/><circle cx="142" cy="54" r="9"/></svg></div>
+<header><div class="top">
+<a class="logo" data-p="home"><svg width="46" height="46" viewBox="0 0 48 48" aria-label="Логотип"><circle cx="24" cy="24" r="23" fill="#fff"/><circle cx="24" cy="24" r="21" fill="#2f5d3a"/><path d="M10 19 24 9l14 10z" fill="#c49a6c"/><path d="M13 21h22v2H13z" fill="#fff"/><path d="M24 40V28c-3-2-8-2-11-1v11c3-1 8-1 11 2zM24 40V28c3-2 8-2 11-1v11c-3-1-8-1-11 2z" fill="#fff"/><path d="M24 28v12" stroke="#6b4a2f" stroke-width="1.5"/></svg>
+<span><b>Библиотека-читальня</b><small>имени А. С. Пушкина · Москва</small></span></a>
+<nav><a data-p="home" class="on">Главная</a><a data-p="cat">Каталог</a><a data-p="acc">Личный кабинет</a><a data-p="ev">Афиша и клубы</a><a data-p="about">О библиотеке</a><a data-p="adm" id="admin-nav" style="display:none">Администратор</a></nav><button class="btn hdr" id="th">Тема</button><button class="btn hdr" id="lo0" style="display:none">Выйти</button></div></header>
+<main>
+<section id="home" class="pg on">
+<div class="hero"><div class="hero-content"><span class="eyebrow">МОСКВА · С 1899 ГОДА</span><h1>У каждой книги —<br>своя история.<br><em>Найдите вашу.</em></h1><p>Пушкинская читальня: встречаемся в историческом особняке, открываем новые книги и читаем онлайн.</p><form class="sb" id="hero-search"><label class="sr-only" for="hq">Автор или название книги</label><input id="hq" placeholder="Книга, автор или новая история…"><button class="btn" id="hs" type="submit">Найти книгу <span aria-hidden="true">↗</span></button></form><a class="hero-link" href="#cat" data-p="cat">Открыть весь каталог <span aria-hidden="true">→</span></a></div><span class="hero-caption">Особняк Мамонтовых — Мухиных · Спартаковская, 9</span></div>
+<div class="services"><a href="#cat" data-p="cat"><span class="service-no">01 / КАТАЛОГ</span><strong>Хорошая книга уже ждёт</strong><span>Поиск по автору, жанру и году <b>↗</b></span></a><a href="#acc" data-p="acc"><span class="service-no">02 / ЛИЧНЫЙ КАБИНЕТ</span><strong>Бронируйте заранее</strong><span>Бронь и продление в пару кликов <b>↗</b></span></a><a href="#ev" data-p="ev"><span class="service-no">03 / ВСТРЕЧИ</span><strong>Больше, чем чтение</strong><span>Клубы, лекции и новые знакомства <b>↗</b></span></a></div>
+<div class="section-heading"><div><span class="eyebrow">КНИЖНАЯ ПОЛКА</span><h2>Что почитать сегодня</h2></div><a href="#cat" data-p="cat">Весь каталог ↗</a></div><div class="tabs" id="pk" style="margin:16px 0 0"></div><p class="note" style="font-family:'PT Serif',Georgia,serif;font-size:18px">«Я памятник себе воздвиг нерукотворный…» <span class="m">— А. С. Пушкин, 1836</span></p><h2 class="small-heading">Новые поступления</h2><div class="grid" id="newb"></div>
+<section class="story-strip"><img src="assets/library-room.jpg" alt="Памятник Пушкину перед настоящей библиотекой на Спартаковской улице" loading="lazy"><div><span class="eyebrow">МЕСТО С ИСТОРИЕЙ</span><h2>Знакомые строки.<br>Новые открытия.</h2><p>Зайдите в Пушкинскую читальню — за любимой классикой, тишиной исторических залов и вдохновением для своих историй.</p><a class="btn" href="#about" data-p="about">Заглянуть в библиотеку ↗</a><a class="photo-credit" href="https://pushkinmoslib.ru/o-biblioteke/portfolio-new/prostranstvo" target="_blank" rel="noopener">Фотографии из официальной галереи библиотеки</a></div></section><div class="info"><div><h2>Афиша мероприятий</h2><div id="evh"></div></div>
+<div><h2>Адрес и часы работы</h2><div class="c"><b>ул. Спартаковская, д. 9, Москва, 105066</b><span class="m">Тел.: +7 (499) 267-56-73</span><span class="m">Вт–Сб: 10:00–21:00, Вс: 10:00–20:00. Пн — выходной</span><span class="m">Бесплатный доступ к книгам и коворкингу</span><a href="https://yandex.ru/maps/?text=Москва, Спартаковская улица, 9" target="_blank" rel="noopener">Построить маршрут на Яндекс.Картах</a></div></div></div>
+<h2>Новости библиотеки</h2><div class="grid" id="nw"></div>
+</section>
+<section id="cat" class="pg"><h2 style="margin-top:0">Каталог</h2>
+<div class="tabs" id="ft"><button class="on" data-f="">Весь фонд</button><button data-f="a">Абонемент</button><button data-f="r">Редкий фонд</button><button data-f="n">Новые поступления</button></div>
+<div class="bar"><input id="q" placeholder="Поиск по автору или названию"><select id="g"></select><select id="y"><option value="">Любой год издания</option><option value="1">до 1900</option><option value="2">1901–2000</option><option value="3">после 2000</option></select></div>
+<div class="grid" id="list"></div></section>
+<section id="acc" class="pg"><h2 style="margin-top:0">Личный кабинет читателя</h2><div id="accb"></div></section>
+<section id="ev" class="pg"><h2 style="margin-top:0">Афиша и клубы</h2><div class="grid" id="evl"></div></section>
+<section id="adm" class="pg"><h2 style="margin-top:0">Режим администратора</h2><p class="m">Список читателей и их бронирований. Данные хранятся в этом браузере.</p><div id="admb"></div></section>
+<section id="about" class="pg"><h2 style="margin-top:0">О библиотеке</h2>
+<div class="c" style="margin-bottom:14px"><h3>Библиотека-читальня имени А. С. Пушкина</h3>
+<p class="m">Одна из старейших публичных библиотек Москвы. Основана в 1899 году, в столетие со дня рождения Александра Сергеевича Пушкина. Первоначально читальня располагалась на Немецкой улице, нынешней Бауманской.</p>
+<p class="m">Сегодня библиотека работает на Спартаковской улице, 9, в особняке Мамонтовых — Мухиных. Здесь собраны более 150 тысяч изданий: прижизненные публикации Пушкина и его современников, классика, современная проза, научно-популярные книги и детская литература. Читальный зал, абонемент, коворкинг и клубы открыты для горожан. Условия записи уточняйте на официальном сайте.</p></div>
+
+<h2>История здания</h2>
+<div class="info"><div class="c"><h3>От купеческого дома до читальни</h3>
+<p class="m">1 ноября 1911 года городские власти приобрели владение наследников купца Мухина на Елоховской площади, ныне Спартаковская улица, 9. Сумма сделки составила 180 тысяч рублей, а здание предназначалось «для нужд городских просветительных учреждений имени А. С. Пушкина».</p>
+<p class="m">С 1912 года библиотека-читальня занимает особняк Мамонтовых — Мухиных и работает в нём до сих пор.</p></div>
+<div class="c"><h3>Пушкинка в цифрах</h3>
+<p class="m">Библиотека работает более 125 лет.</p>
+<p class="m">Фонд насчитывает около 150 тысяч изданий, в том числе прижизненные.</p>
+<p class="m">В штате около 40 сотрудников.</p>
+<p class="m">Здесь регулярно проходят лекции, творческие встречи, выставки и просветительские мероприятия.</p></div></div>
+
+<h2>Фотографии</h2>
+<div class="ph-grid"><figure class="ph"><img src="assets/library-room.jpg" alt="Памятник Пушкину и фасад библиотеки" loading="lazy"><figcaption>Фасад и памятник А. С. Пушкину</figcaption></figure><figure class="ph"><img src="assets/library-stairs.jpg" alt="Парадная лестница особняка Мамонтовых — Мухиных" loading="lazy"><figcaption>Парадная лестница</figcaption></figure><figure class="ph"><img src="assets/library-hall.jpg" alt="Исторический интерьер Пушкинской читальни" loading="lazy"><figcaption>Архитектура исторического особняка</figcaption></figure></div><p class="m">Источник фотографий: <a href="https://pushkinmoslib.ru/o-biblioteke/portfolio-new/prostranstvo" target="_blank" rel="noopener">официальная галерея библиотеки</a>. Фотография лестницы: A. Savin (asv2019), источник указан в галерее.</p>
+
+<h2>Годы и события</h2>
+<div class="info">
+<div class="c"><h3>Военные годы</h3><p class="m">Библиотека не закрывалась и в годы Великой Отечественной войны. Сотрудники читали газеты и журналы раненым в госпиталях, проводили беседы и выставки.</p></div>
+<div class="c"><h3>Нотно-музыкальный отдел</h3><p class="m">В 1930-х годах в библиотеке открылся нотно-музыкальный отдел, который работает и сегодня.</p></div>
+<div class="c"><h3>«Новые адреса счастья»</h3><p class="m">Читальня стала одной из площадок городской программы «Новые адреса счастья» и принимает горожан на культурных и просветительских мероприятиях.</p></div>
+<div class="c"><h3>Мультимедийный центр</h3><p class="m">В 2024 году библиотека стала мультимедийным центром Всероссийского музея А. С. Пушкина. Здесь появились оцифрованные портреты членов семьи поэта, рисунки и фотографии его детей, доступ к научно-популярным фильмам и изданиям музея.</p></div>
+</div>
+
+<h2>Что мы предлагаем</h2>
+<div class="info">
+<div class="c"><h3>Абонемент</h3><p class="m">Книги на дом на 14 дней, продление онлайн в личном кабинете.</p></div>
+<div class="c"><h3>Читальный зал и редкий фонд</h3><p class="m">Прижизненные издания и редкие книги выдаются для работы в читальном зале под присмотром сотрудников.</p></div>
+<div class="c"><h3>Коворкинг</h3><p class="m">Рабочие места с розетками и Wi-Fi, в том числе по субботам.</p></div>
+<div class="c"><h3>Клубы и мероприятия</h3><p class="m">Клуб молодого читателя, киноклуб, клуб программистов, детский час сказок Пушкина вслух. Актуальная афиша — в разделе «Афиша и клубы».</p></div>
+</div>
+
+<h2>Контакты и как записаться</h2>
+<div class="info">
+<div class="c"><h3>Контакты</h3><span>ГБУК г. Москвы «Библиотека-читальня им. А. С. Пушкина»</span><span class="m">105066, г. Москва, ул. Спартаковская, д. 9</span><span class="m">Тел.: +7 (499) 267-56-73</span><span class="m">Режим работы уточняйте по телефону или на официальном сайте.</span><a href="https://yandex.ru/maps/?text=Москва, Спартаковская улица, 9" target="_blank" rel="noopener">Построить маршрут на Яндекс.Картах</a></div>
+<div class="c"><h3>Как записаться</h3><span class="m">1. Зарегистрируйтесь в личном кабинете на сайте.</span><span class="m">2. Найдите книгу в каталоге и нажмите «Забронировать».</span><span class="m">3. Заберите её в библиотеке в течение срока брони.</span></div>
+</div></section>
+
+<section id="contacts" class="pg"><span class="eyebrow">БУДЕМ НА СВЯЗИ</span><h2>Контакты</h2><div class="contact-layout"><img src="assets/library-room.jpg" alt="Пушкинская библиотека, Москва" loading="lazy"><div class="c"><h3>Библиотека-читальня имени А. С. Пушкина</h3><p>105066, Москва, улица Спартаковская, дом 9. Метро «Бауманская».</p><a href="tel:+74992675673">Главное здание: +7 (499) 267-56-73</a><a href="tel:+74992610848">Абонемент: +7 (499) 261-08-48</a><a href="mailto:bibliotekapushkina@culture.mos.ru">bibliotekapushkina@culture.mos.ru</a><h3>Когда приходить</h3><p>Главное здание: вт–сб 10:00–21:00, вс 10:00–20:00.<br>Абонемент: вт–сб 10:00–22:00, вс 10:00–20:00.<br>Понедельник — выходной. Последний вторник месяца — санитарный день.</p><a href="https://pushkinmoslib.ru/contact" target="_blank" rel="noopener">Актуальный график на официальном сайте ↗</a><a class="btn" href="https://yandex.ru/maps/?text=Москва%2C%20Спартаковская%20улица%2C%209" target="_blank" rel="noopener">Маршрут до библиотеки ↗</a></div></div></section><section id="help" class="pg"><span class="eyebrow">ПРОСТО НАЧАТЬ</span><h2>Как пользоваться библиотекой</h2><div class="info"><div class="c"><h3>01. Выберите книгу</h3><p>Откройте каталог, введите название или автора. Уточните жанр и год. Нажмите на обложку, чтобы прочитать аннотацию.</p><a href="#cat" data-p="cat">Перейти в каталог →</a></div><div class="c"><h3>02. Забронируйте</h3><p>Зарегистрируйтесь в личном кабинете и нажмите «Забронировать». В кабинете можно отменить бронь, вернуть книгу и один раз продлить срок на 7 дней.</p><a href="#acc" data-p="acc">Открыть личный кабинет →</a></div><div class="c"><h3>03. Читайте онлайн</h3><p>У книг с доступным полным текстом есть кнопка «Читать онлайн». Настройте размер шрифта, выберите главу или страницу. Место чтения сохраняется в браузере.</p></div><div class="c"><h3>04. Приходите в читальню</h3><p>Для работы с редким фондом и уточнения условий записи обратитесь в библиотеку. На этом учебном сайте брони сохраняются только в вашем браузере и не передаются сотрудникам.</p><a href="#contacts" data-p="contacts">Адрес и контакты →</a></div></div></section></main>
+<div class="shelf"></div><footer><div class="footer-inner"><div class="footer-brand"><span class="eyebrow">ДОМ ДЛЯ ВАШИХ ИСТОРИЙ</span><h2>Пушкинская<br>читальня</h2><p>Книги объединяют.<br>С 1899 года — в самом сердце Москвы.</p></div><div><h3>Библиотека</h3><a href="#about" data-p="about">О нас</a><a href="#cat" data-p="cat">Каталог книг</a><a href="#ev" data-p="ev">Афиша и клубы</a><a href="#help" data-p="help">Как это работает</a></div><div><h3>Читателям</h3><a href="#acc" data-p="acc">Личный кабинет</a><a href="#contacts" data-p="contacts">Связаться с нами</a><a href="https://pushkinmoslib.ru/" target="_blank" rel="noopener">Официальный сайт ↗</a><a href="https://pushkinmoslib.ru/o-biblioteke/portfolio-new/prostranstvo" target="_blank" rel="noopener">Фотографии библиотеки ↗</a></div><div><h3>Приходите в гости</h3><p>Москва, Спартаковская, 9<br>м. Бауманская</p><a href="tel:+74992675673">+7 (499) 267-56-73</a><a href="mailto:bibliotekapushkina@culture.mos.ru">Написать на почту ↗</a><a href="https://yandex.ru/maps/?text=Москва%2C%20Спартаковская%20улица%2C%209" target="_blank" rel="noopener">Построить маршрут ↗</a></div></div><div class="footer-bottom"><span>© Пушкинская читальня · Учебный проект на основе реальной библиотеки</span><a href="#home" data-p="home">Наверх ↑</a></div></footer>
+<dialog id="book-dialog" aria-labelledby="book-title"></dialog>
+<dialog id="reader" aria-labelledby="reader-title"></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="vendor/jquery.min.js"></script>
+<script src="books.js"></script>
+<script src="descriptions.js"></script>
+<script src="app.js"></script>
+<script src="enhancements.js"></script></body></html>
